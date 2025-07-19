@@ -3,11 +3,13 @@ import gsap from "gsap";
 import React, { useRef } from "react";
 import Image from "next/image";
 import { useGSAP } from "@gsap/react";
-import { SplitText } from "gsap/all";
+import { SplitText, ScrollTrigger } from "gsap/all";
 import { useMediaQuery } from "react-responsive";
 
-const Hero = () => {
-  const videoRef = useRef();
+gsap.registerPlugin(ScrollTrigger, SplitText);
+
+const Hero: React.FC = () => {
+  const videoRef = useRef<HTMLVideoElement>(null);
 
   const isMobile = useMediaQuery({ maxWidth: 767 });
 
@@ -15,7 +17,7 @@ const Hero = () => {
     const heroSplit = new SplitText(".title", { type: "chars,words" });
     const paragraphSplit = new SplitText(".subtitle", { type: "lines" });
 
-    heroSplit.chars.forEach((char) => char.classList.add("text-gradient"));
+    heroSplit.chars.forEach((char) => (char as HTMLElement).classList.add("text-gradient"));
 
     gsap.from(heroSplit.chars, {
       y: 100,
@@ -48,21 +50,28 @@ const Hero = () => {
     const startValue = isMobile ? "top 50%" : "center 60%";
     const endValue = isMobile ? "120% top" : "bottom top";
 
-    //Video Animation Timeline
+    // Video Animation Timeline
     const tl = gsap.timeline({
       scrollTrigger: {
-        trigger: "video",
+        trigger: videoRef.current,
         start: startValue,
         end: endValue,
         scrub: true,
         pin: true,
       },
     });
-    videoRef.current.onloadedmetadata = () => {
-      tl.to(videoRef.current, {
-        currentTime: videoRef.current.duration,
-      });
-    };
+    if (videoRef.current) {
+      const setTimeline = () => {
+        tl.to(videoRef.current, {
+          currentTime: videoRef.current ? videoRef.current.duration : 0,
+        });
+      };
+      if (videoRef.current.readyState >= 1) {
+        setTimeline();
+      } else {
+        videoRef.current.onloadedmetadata = setTimeline;
+      }
+    }
   }, []);
   return (
     <>

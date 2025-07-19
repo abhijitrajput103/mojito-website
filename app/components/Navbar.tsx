@@ -4,10 +4,16 @@ import { navLinks } from "@/constants";
 import gsap from "gsap";
 import { ScrollTrigger, SplitText } from "gsap/all";
 import { useGSAP } from "@gsap/react";
+import React from "react";
 
 gsap.registerPlugin(ScrollTrigger, SplitText);
 
-const Navbar = () => {
+interface NavLink {
+  id: string;
+  title: string;
+}
+
+const Navbar: React.FC = () => {
   useGSAP(() => {
     const navTween = gsap.timeline({
       scrollTrigger: {
@@ -34,7 +40,7 @@ const Navbar = () => {
       </a>
 
       <ul className="flex items-center gap-8">
-        {navLinks.map((link) => (
+        {(navLinks as NavLink[]).map((link) => (
           <li key={link.id}>
             <a
               href={`#${link.id}`}
