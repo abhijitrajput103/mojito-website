@@ -185,6 +185,20 @@ body {
   }
 
   #about {
+    @layer components {
+      .badge {
+        @apply inline-block rounded-full bg-white text-black px-4 py-1 text-sm font-medium;
+      }
+    
+      .avatar-stack {
+        @apply flex items-center space-x-[-12px];
+      }
+    
+      .rating-stars {
+        @apply flex items-center space-x-1;
+      }
+    }
+    
     @apply min-h-screen py-28 2xl:px-0 px-5 container mx-auto;
 
     .content {
