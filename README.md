@@ -1,36 +1,68 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Just Pour 🍸
+
+A visually stunning, GSAP-animated cocktail bar website built with Next.js 15, React 19, and Tailwind CSS. Explore signature cocktails, mocktails, and the artistry behind every pour.
+
+## Features
+
+- **GSAP Animations**: Smooth, scroll-based and interactive animations throughout the site.
+- **Hero Section**: Animated intro with video and dynamic text effects.
+- **About**: Highlights the bar's philosophy, customer reviews, and team.
+- **Cocktails & Mocktails**: Lists of popular drinks with details and prices.
+- **Menu**: Interactive carousel to explore featured cocktails, with images and recipes.
+- **Art**: Showcases the craft and passion behind each drink.
+- **Contact**: Store location, hours, contact info, and social links.
+- **Responsive Design**: Fully optimized for mobile and desktop.
+- **Custom Fonts & Visuals**: Unique branding with custom fonts and rich imagery.
+
+## Tech Stack
+
+- [Next.js 15](https://nextjs.org/) (App Router)
+- [React 19](https://react.dev/)
+- [GSAP 3](https://greensock.com/gsap/) & [@gsap/react](https://www.npmjs.com/package/@gsap/react)
+- [Tailwind CSS 4](https://tailwindcss.com/)
+- TypeScript
 
 ## Getting Started
 
-First, run the development server:
+### 1. Install dependencies
+
+```bash
+npm install
+```
+
+### 2. Run the development server
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) to view the site.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### 3. Build for production
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run build
+npm start
+```
 
-## Learn More
+## Project Structure
 
-To learn more about Next.js, take a look at the following resources:
+- `app/` — Main app directory (Next.js App Router)
+  - `components/` — Hero, About, Cocktails, Menu, Art, Contact, Navbar
+  - `layout.tsx` — Root layout and font setup
+  - `index.css` — Tailwind and custom styles
+- `constants/` — Data for drinks, features, profiles, etc.
+- `public/` — Images, fonts, and videos
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Deployment
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+You can deploy this app to [Vercel](https://vercel.com/) or any Node.js hosting provider.
 
-## Deploy on Vercel
+## Credits
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- Design & development: [Your Name or Team]
+- Images & videos: Unsplash, Pexels, or custom assets
+- Animations: [GSAP](https://greensock.com/gsap/)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+

@@ -120,7 +120,7 @@ const navLinks = [
     {
        name: "Instagram",
        icon: "/images/insta.png",
-       url: "#",
+       url: "https://www.instagram.com/abhijit__rajput_?igsh=YXdieHl3NDJ1ZzFm",
     },
     {
        name: "X (Twitter)",
@@ -130,7 +130,7 @@ const navLinks = [
     {
        name: "Facebook",
        icon: "/images/fb.png",
-       url: "#",
+       url: "https://www.facebook.com/share/15gXvAwSkg/",
     },
    ];
    
