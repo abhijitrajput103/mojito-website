@@ -63,7 +63,7 @@ const Hero: React.FC = () => {
     if (videoRef.current) {
       const setTimeline = () => {
         tl.to(videoRef.current, {
-          currentTime: videoRef.current ? videoRef.current.duration : 0,
+          currentTime: videoRef.current ? videoRef.current.duration / 2 : 0,
         });
       };
       if (videoRef.current.readyState >= 1) {
@@ -114,7 +114,7 @@ const Hero: React.FC = () => {
         </div>
       </section>
 
-      <div className="video absolute inset-0">
+      <div className="video absolute inset-0" style={{ minHeight: '100vh' }}>
         <video
           ref={videoRef}
           src="/videos/output.mp4"
