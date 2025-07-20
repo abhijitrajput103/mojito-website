@@ -26,11 +26,11 @@ const Cocktails: React.FC = () => {
     parallaxTimeline
       .from("#c-left-leaf", {
         x: -100,
-        y: 100,
+        y: 110,
       })
       .from("#c-right-leaf", {
         x: 100,
-        y: 100,
+        y: 110,
       });
   });
 

@@ -33,18 +33,18 @@ const Navbar: React.FC = () => {
     );
   });
   return (
-    <nav className="flex justify-between items-center px-6 py-4">
+    <nav className="flex flex-col md:flex-row md:justify-between items-center px-6 py-4 gap-4 md:gap-0">
       <a href="#home" className="flex items-center gap-2">
         <Image src="/images/logo.png" alt="Logo" width={32} height={32} />
         <p className="font-bold text-xl">Just Pour</p>
       </a>
 
-      <ul className="flex items-center gap-8">
+      <ul className="flex items-center gap-4 md:gap-8">
         {(navLinks as NavLink[]).map((link) => (
           <li key={link.id}>
             <a
               href={`#${link.id}`}
-              className="text-gray-700 hover:text-gray-900 transition-colors"
+              className="text-gray-700 hover:text-white transition-colors text-sm md:text-base"
             >
               {link.title}
             </a>
